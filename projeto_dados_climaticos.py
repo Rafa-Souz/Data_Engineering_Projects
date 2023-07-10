@@ -21,10 +21,8 @@ with DAG(
         dados = pd.read_csv(URL)
 
         file_path = f'/home/rafael/Documents/airflowalura/Clima_Semana_={data_interval_end}/'
-        #os.mkdir(file_path)
 
         dados.to_csv(file_path+'dados_brutos.csv')
-        #print(dados[['datetime']].head())
         dados[["datetime", "tempmin", "temp", "tempmax"]].to_csv(file_path + 'temperaturas.csv')
         dados[['datetime', 'description','icon']].to_csv(file_path + 'condicoes.csv')
 
