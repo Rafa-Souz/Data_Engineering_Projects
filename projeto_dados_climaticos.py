@@ -18,14 +18,10 @@ with DAG(
 
         URL = f'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/{city}/{data_interval_end}/{ds_add(data_interval_end, 7)}?unitGroup=metric&include=days&key={key}&contentType=csv'
 
-
-
         dados = pd.read_csv(URL)
-
 
         file_path = f'/home/rafael/Documents/airflowalura/Clima_Semana_={data_interval_end}/'
         #os.mkdir(file_path)
-
 
         dados.to_csv(file_path+'dados_brutos.csv')
         #print(dados[['datetime']].head())
